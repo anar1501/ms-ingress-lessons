@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: Creating order table
+      author: anar.mammadov.1996@gmail.com
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_order
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: amount
+                  type: DECIMAL
+              - column:
+                  name: status
+                  type: VARCHAR(255)
+            tableName: order
+
