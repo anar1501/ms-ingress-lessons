@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: creating-tour-table
+      author: anar.mammadov.1996@gmail.com
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: tour_id
+            baseTableName: destination
+            constraintName: FK_DESTINATION_ON_TOUR
+            referencedColumnNames: id
+            referencedTableName: tour

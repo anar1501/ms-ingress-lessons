@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: creating-passport-table
+      author: anar.mammadov.1996@gmail.com
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_passport
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: passport_number
+                  constraints:
+                    nullable: false
+                    unique: true
+                  type: VARCHAR(255)
+              - column:
+                  name: issue_date
+                  type: DATETIME
+              - column:
+                  name: expiry_date
+                  type: DATETIME
+              - column:
+                  name: country
+                  type: VARCHAR(255)
+            tableName: passport

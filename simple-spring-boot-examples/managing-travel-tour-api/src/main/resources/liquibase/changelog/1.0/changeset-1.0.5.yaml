@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: creating-tour_guide-table
+      author: anar.mammadov.1996@gmail.com
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_tour_guide
+                  name: guide_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_tour_guide
+                  name: tour_id
+                  type: BIGINT
+            tableName: tour_guide

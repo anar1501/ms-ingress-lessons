@@ -1,0 +1,12 @@
+databaseChangeLog:
+      - changeSet:
+              id: adding-foreign-key-guide_id-constraints-to-tour_guide-table
+              author: anar.mammadov.1996@gmail.com
+              objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+              changes:
+                    - addForeignKeyConstraint:
+                            baseColumnNames: guide_id
+                            baseTableName: tour_guide
+                            constraintName: fk_tougui_on_guide
+                            referencedColumnNames: id
+                            referencedTableName: guide

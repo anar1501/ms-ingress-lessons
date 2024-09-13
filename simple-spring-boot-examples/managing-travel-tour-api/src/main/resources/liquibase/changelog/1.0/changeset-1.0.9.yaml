@@ -1,0 +1,12 @@
+databaseChangeLog:
+    - changeSet:
+          id: adding-foreign-key-guide_id-constraints-to-passport-table
+          author: anar.mammadov.1996@gmail.com
+          objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+          changes:
+              - addForeignKeyConstraint:
+                    baseColumnNames: passport_id
+                    baseTableName: guide
+                    constraintName: FK_PASSPORT_ON_GUIDE
+                    referencedColumnNames: id
+                    referencedTableName: passport

@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: creating-traveler-table
+      author: anar.mammadov.1996@gmail.com
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_traveler
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: first_name
+                  type: VARCHAR(255)
+              - column:
+                  name: last_name
+                  type: VARCHAR(255)
+              - column:
+                  name: email
+                  constraints:
+                    nullable: false
+                    unique: true
+                  type: VARCHAR(255)
+            tableName: traveler

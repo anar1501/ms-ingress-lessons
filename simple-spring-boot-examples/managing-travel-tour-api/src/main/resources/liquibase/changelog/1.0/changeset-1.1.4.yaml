@@ -1,0 +1,12 @@
+databaseChangeLog:
+    - changeSet:
+          id: adding-foreign-key-traveler_id-constraints-to-tour_traveler-table
+          author: anar.mammadov.1996@gmail.com
+          objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+          changes:
+              - addForeignKeyConstraint:
+                    baseColumnNames: traveler_id
+                    baseTableName: tour_traveler
+                    constraintName: fk_toutra_on_traveler
+                    referencedColumnNames: id
+                    referencedTableName: traveler

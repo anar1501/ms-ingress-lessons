@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: creating-guide-table
+      author: anar.mammadov.1996@gmail.com
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_guide
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: email
+                  constraints:
+                    nullable: false
+                    unique: true
+                  type: VARCHAR(255)
+              - column:
+                  name: phone_number
+                  constraints:
+                    nullable: false
+                    unique: true
+                  type: VARCHAR(255)
+              - column:
+                  name: available_from
+                  type: DATETIME
+              - column:
+                  name: available_to
+                  type: DATETIME
+              - column:
+                  name: passport_id
+                  type: BIGINT
+            tableName: guide

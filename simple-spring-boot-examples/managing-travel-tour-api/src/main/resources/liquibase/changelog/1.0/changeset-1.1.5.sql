@@ -1,0 +1,29 @@
+-- -- Insert records into the Tour table
+-- INSERT INTO tour (id, name, description, price,start_date,end_date)
+-- VALUES (1, 'European Adventure', 'Explore the best of Europe in 10 days.', 2500.00, '2024-01-01 09:00:00', '2024-01-07 18:00:00'),
+--        (2, 'Caribbean Cruise', 'Relax on a luxury cruise through the Caribbean.', 3500.00, '2024-02-01 09:00:00', '2024-02-07 18:00:00'),
+--        (3, 'Safari Expedition', 'Experience the wild on a thrilling safari.', 4000.00, '2024-03-01 09:00:00', '2024-03-07 18:00:00');
+--
+-- -- Insert records into the Destination table
+-- INSERT INTO destination (id, location, description, visit_date)
+-- VALUES (1, 'Paris, France', 'Visit the Eiffel Tower and the Louvre.', '2024-06-03T00:00:00'),
+--        (2, 'Rome, Italy', 'Explore the Colosseum and the Vatican.', '2024-06-05T00:00:00'),
+--        (3, 'Nassau, Bahamas', 'Enjoy the sun and sand in Nassau.', '2024-07-01T00:00:00');
+--
+-- -- Insert records into the Guide table
+-- INSERT INTO guide (id, name, email, phone_number, available_from, available_to)
+-- VALUES (1, 'John Doe', 'john.doe@example.com', '123-456-7890', '2024-01-01T00:00:00', '2024-12-31T23:59:59'),
+--        (2, 'Jane Smith', 'jane.smith@example.com', '234-567-8901', '2024-02-01T00:00:00', '2024-12-31T23:59:59'),
+--        (3, 'Robert Brown', 'robert.brown@example.com', '345-678-9012', '2024-03-01T00:00:00', '2024-12-31T23:59:59');
+--
+-- -- Insert records into the Passport table
+-- INSERT INTO passport (id, passport_number, issue_date, expiry_date, country)
+-- VALUES (1, 'P1234567', '2023-01-01T00:00:00', '2033-01-01T00:00:00', 'USA'),
+--        (2, 'P2345678', '2024-01-01T00:00:00', '2034-01-01T00:00:00', 'Canada'),
+--        (3, 'P3456789', '2022-01-01T00:00:00', '2032-01-01T00:00:00', 'UK');
+--
+-- -- Insert records into the Traveler table
+-- INSERT INTO traveler (id, first_name, last_name, email)
+-- VALUES (1, 'Alice', 'Johnson', 'alice.johnson@example.com'),
+--        (2, 'Bob', 'Williams', 'bob.williams@example.com'),
+--        (3, 'Carol', 'Davis', 'carol.davis@example.com');
