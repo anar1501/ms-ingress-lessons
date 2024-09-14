@@ -1,0 +1,183 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1726304611038-1
+      author: User
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_creditentity
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: term
+                  type: INT
+              - column:
+                  name: interest
+                  type: DECIMAL
+              - column:
+                  name: monthly_payment
+                  type: DECIMAL
+              - column:
+                  name: amount
+                  type: DECIMAL
+              - column:
+                  name: requested_amount
+                  type: DECIMAL
+              - column:
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: customer_id
+                  type: BIGINT
+            tableName: credit_entity
+  - changeSet:
+      id: 1726304611038-2
+      author: User
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_customerentity
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: pin
+                  type: VARCHAR(255)
+              - column:
+                  name: full_name
+                  type: VARCHAR(255)
+              - column:
+                  name: phone_number
+                  type: VARCHAR(255)
+              - column:
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  name: updated_at
+                  type: DATETIME
+            tableName: customer_entity
+  - changeSet:
+      id: 1726304611038-3
+      author: User
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_offerentity
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: term
+                  type: INT
+              - column:
+                  name: interest
+                  type: DECIMAL
+              - column:
+                  name: monthly_payment
+                  type: DECIMAL
+              - column:
+                  name: amount
+                  type: DECIMAL
+              - column:
+                  constraints:
+                    nullable: false
+                  name: accepted
+                  type: BOOLEAN
+              - column:
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: credit_id
+                  type: BIGINT
+            tableName: offer_entity
+  - changeSet:
+      id: 1726304611038-4
+      author: User
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_statushistoryentity
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  name: created_at
+                  type: DATETIME
+              - column:
+                  name: updated_at
+                  type: DATETIME
+              - column:
+                  name: credit_id
+                  type: BIGINT
+            tableName: status_history_entity
+  - changeSet:
+      id: 1726304611038-5
+      author: User
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: customer_id
+            baseTableName: credit_entity
+            constraintName: FK_CREDITENTITY_ON_CUSTOMER
+            referencedColumnNames: id
+            referencedTableName: customer_entity
+  - changeSet:
+      id: 1726304611038-6
+      author: User
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: credit_id
+            baseTableName: offer_entity
+            constraintName: FK_OFFERENTITY_ON_CREDIT
+            referencedColumnNames: id
+            referencedTableName: credit_entity
+  - changeSet:
+      id: 1726304611038-7
+      author: User
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: credit_id
+            baseTableName: status_history_entity
+            constraintName: FK_STATUSHISTORYENTITY_ON_CREDIT
+            referencedColumnNames: id
+            referencedTableName: credit_entity
+
